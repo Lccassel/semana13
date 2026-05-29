@@ -1,0 +1,31 @@
+# Função para calcular a média
+def calcular_media(array):
+    soma = 0
+
+    for valor in array:
+        soma += valor
+
+    media = soma / len(array)
+    return media
+
+
+# Função para mostrar valores acima da média
+def mostrar_acima_media(array, media):
+    print("Produções acima da média:")
+
+    for valor in array:
+        if valor > media:
+            print(valor)
+
+
+# Lista com 8 valores de produção em kg
+producoes = [120, 150, 98, 200, 175, 130, 90, 160]
+
+# Calcula a média
+media = calcular_media(producoes)
+
+# Exibe a média
+print("Média das produções:", media)
+
+# Exibe produções acima da média
+mostrar_acima_media(producoes, media)
