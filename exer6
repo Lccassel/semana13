@@ -1,0 +1,41 @@
+# Função para ler os valores de uma fazenda
+def ler_producoes(nome_fazenda, tamanho):
+    producoes = []
+
+    for i in range(tamanho):
+        valor = int(input(f"Digite a produção do lote {i} da {nome_fazenda}: "))
+        producoes.append(valor)
+
+    return producoes
+
+
+# Função para somar os arrays
+def somar_arrays(array1, array2):
+    soma = []
+
+    for i in range(len(array1)):
+        soma.append(array1[i] + array2[i])
+
+    return soma
+
+
+# Função para imprimir um array
+def imprimir_array(array, mensagem):
+    print(mensagem)
+
+    for i in range(len(array)):
+        print(f"Lote {i}: {array[i]} kg")
+
+
+# Programa principal
+tamanho = 5
+
+fazenda_a = ler_producoes("Fazenda A", tamanho)
+fazenda_b = ler_producoes("Fazenda B", tamanho)
+
+fazenda_total = somar_arrays(fazenda_a, fazenda_b)
+
+# Exibe os resultados
+imprimir_array(fazenda_a, "\nProduções da Fazenda A:")
+imprimir_array(fazenda_b, "\nProduções da Fazenda B:")
+imprimir_array(fazenda_total, "\nSoma das produções:")
