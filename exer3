@@ -1,0 +1,23 @@
+# Função para ler os valores
+def ler_producoes():
+    producoes = []
+
+    for i in range(5):
+        valor = float(input(f"Digite a produção {i + 1} em kg: "))
+        producoes.append(valor)
+
+    return producoes
+
+
+# Função para imprimir em ordem inversa
+def imprimir_inverso(array):
+    print("Produções em ordem inversa:")
+
+    for i in range(len(array) - 1, -1, -1):
+        print(array[i])
+
+
+# Programa principal
+producoes = ler_producoes()
+
+imprimir_inverso(producoes)
