@@ -1,0 +1,38 @@
+# Função para ler os valores dos lotes
+def ler_lotes():
+    lotes = []
+
+    for i in range(6):
+        valor = float(input(f"Digite a quantidade de azeitona do lote {i} em kg: "))
+        lotes.append(valor)
+
+    return lotes
+
+
+# Função para calcular os litros estimados de azeite
+def calcular_azeite(lotes, rendimento):
+    litros = []
+
+    for i in range(len(lotes)):
+        litros_estimados = lotes[i] * rendimento
+        litros.append(litros_estimados)
+
+    return litros
+
+
+# Função para imprimir os resultados
+def imprimir_resultados(lotes, litros):
+    print("\nEstimativa de azeite por lote:")
+
+    for i in range(len(lotes)):
+        print(f"Lote {i}: {litros[i]:.2f} litros")
+
+
+# Programa principal
+rendimento = 0.18  # 18%
+
+lotes = ler_lotes()
+
+litros_azeite = calcular_azeite(lotes, rendimento)
+
+imprimir_resultados(lotes, litros_azeite)
