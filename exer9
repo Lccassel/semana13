@@ -1,0 +1,37 @@
+import random
+
+# Função para gerar 10 IDs aleatórios entre 1 e 100
+def gerar_ids():
+    ids = []
+
+    for i in range(10):
+        ids.append(random.randint(1, 100))
+
+    return ids
+
+
+# Função para filtrar apenas pares
+def filtrar_pares(array):
+    pares = []
+
+    for valor in array:
+        if valor % 2 == 0:
+            pares.append(valor)
+
+    return pares
+
+
+# Função para imprimir array
+def imprimir_array(array, titulo):
+    print(titulo)
+
+    for valor in array:
+        print(valor)
+
+
+# Programa principal
+ids = gerar_ids()
+pares = filtrar_pares(ids)
+
+imprimir_array(ids, "Todos os IDs gerados:")
+imprimir_array(pares, "\nIDs pares:")
