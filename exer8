@@ -1,0 +1,30 @@
+# Função para ler os códigos RFID
+def ler_codigos():
+    codigos = []
+
+    for i in range(10):
+
+        while True:
+            codigo = int(input(f"Digite o código RFID {i + 1}: "))
+
+            if codigo > 1000:
+                codigos.append(codigo)
+                break
+            else:
+                print("Código inválido. Digite um valor maior que 1000.")
+
+    return codigos
+
+
+# Função para mostrar os códigos
+def mostrar_codigos(codigos):
+    print("\nCódigos RFID cadastrados:")
+
+    for i in range(len(codigos)):
+        print(codigos[i])
+
+
+# Programa principal
+rfid = ler_codigos()
+
+mostrar_codigos(rfid)
