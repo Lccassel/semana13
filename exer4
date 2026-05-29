@@ -1,0 +1,37 @@
+# Função para ler as quantidades
+def ler_colheitas():
+    colheitas = []
+
+    for i in range(5):
+        valor = int(input(f"Digite a quantidade da colheita {i + 1} em kg: "))
+        colheitas.append(valor)
+
+    return colheitas
+
+
+# Função para calcular a soma
+def calcular_soma(array):
+    soma = 0
+
+    for valor in array:
+        soma += valor
+
+    return soma
+
+
+# Função para calcular a média
+def calcular_media(soma, quantidade):
+    media = soma / quantidade
+    return media
+
+
+# Programa principal
+colheitas = ler_colheitas()
+
+soma_total = calcular_soma(colheitas)
+
+media = calcular_media(soma_total, len(colheitas))
+
+# Exibe os resultados
+print("Soma total das colheitas:", soma_total, "kg")
+print("Média por colheita:", media, "kg")
