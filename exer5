@@ -1,0 +1,42 @@
+# Função para ler as produções
+def ler_producoes():
+    producoes = []
+
+    for i in range(5):
+        valor = int(input(f"Digite a produção da árvore {i}: "))
+        producoes.append(valor)
+
+    return producoes
+
+
+# Função para encontrar maior e menor valor
+def encontrar_maior_menor(array):
+    maior = array[0]
+    menor = array[0]
+
+    indice_maior = 0
+    indice_menor = 0
+
+    for i in range(len(array)):
+        if array[i] > maior:
+            maior = array[i]
+            indice_maior = i
+
+        if array[i] < menor:
+            menor = array[i]
+            indice_menor = i
+
+    return maior, indice_maior, menor, indice_menor
+
+
+# Programa principal
+producoes = ler_producoes()
+
+maior, indice_maior, menor, indice_menor = encontrar_maior_menor(producoes)
+
+# Exibe os resultados
+print("Maior produção:", maior, "kg")
+print("Índice da maior produção:", indice_maior)
+
+print("Menor produção:", menor, "kg")
+print("Índice da menor produção:", indice_menor)
